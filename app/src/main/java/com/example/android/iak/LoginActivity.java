@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //static final nama variabel huruf besar
     private static final String USERNAME = "admin";
-    private static final String PASSWORD = "admin";
+    private static final String PASSWORD = "123";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (username.equals(USERNAME) && password.equals(PASSWORD)) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.putExtra(MainActivity.USERNAME, username);
+                    intent.putExtra(MainActivity.PASSWORD, password);
                     finish();
                     startActivity(intent);
                 } else {
